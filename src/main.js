@@ -1,5 +1,14 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import { createRouter } from 'vue-router';
 
-createApp(App).mount('#app')
+import './style.css';
+import App from './App.vue';
+
+import Home from './pages/Home.vue'
+import Home from './pages/ToDo.vue'
+
+const routes = [
+    {path: '/' component: Home},
+    {path: '/' component: Home},
+]
+createApp(App).mount('#app');
