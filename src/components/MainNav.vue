@@ -1,3 +1,5 @@
+
+import { RouterLink } from 'vue-router';
 <template>
     <b-navbar>
         <template #brand>
@@ -9,12 +11,12 @@
             </b-navbar-item>
         </template>
         <template #start>
-            <b-navbar-item tag="router-link" to="/">
-                Home
-            </b-navbar-item>
-            <b-navbar-item tag="router-link" to="/todo">
-                ToDo
-            </b-navbar-item>
+                <b-navbar-item tag="router-link" to="/">
+                    Home
+                </b-navbar-item>
+                <b-navbar-item tag="router-link" to="/Todo">
+                    Todo
+                </b-navbar-item>
         </template>
 
         <template #end>

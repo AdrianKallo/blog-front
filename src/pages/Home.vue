@@ -1,17 +1,29 @@
 <script setup>
 import axios from 'axios';
-import {ref} from 'vue';
-import {DateTime} from ('luxon');
-let posts = ref([]); 
-axios.get('https://localhost:8000/api/posts').then(res =>{
+import { ref } from 'vue';
+import { DateTime } from ("luxon");
+let posts = ref([]);
+axios.get('http://localhost:8000/api/posts').then(res => {
     console.log(res);
-    posts.value = res.data.data
-})
+    post.value = res.data.data
+});
 </script>
+
 <template>
-    <div class="container">
-        <div class="columns is-multiline">
-            <div class="column is-"></div>
+    <div class="columns is multiline">
+        <div class="column">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        {{ post.title }}
+                    </p>
+                </header>
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                         <img :src="post.images[0].path"
+                    </figure>
+                </div>
+            </div>
         </div>
     </div>
 </template>
