@@ -1,5 +1,7 @@
-
-import { RouterLink } from 'vue-router';
+<script setup>
+import { useAuthStore } from '../stores/auth.js';
+const auth = useAuthStore()
+</script>
 <template>
     <b-navbar>
         <template #brand>
@@ -11,23 +13,28 @@ import { RouterLink } from 'vue-router';
             </b-navbar-item>
         </template>
         <template #start>
-                <b-navbar-item tag="router-link" to="/">
-                    Home
-                </b-navbar-item>
-                <b-navbar-item tag="router-link" to="/Todo">
-                    Todo
-                </b-navbar-item>
+            <b-navbar-item tag="router-link" to="/">
+                Home
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" to="/todo">
+                Todo
+            </b-navbar-item>
         </template>
 
         <template #end>
-            <b-navbar-item tag="div">
+            <b-navbar-dropdown :label="auth.user.name" v-if="auth.user">
+                <b-navbar-item @click="auth.logout()">
+                    Logout
+                </b-navbar-item>
+            </b-navbar-dropdown>
+            <b-navbar-item tag="div" v-else>
                 <div class="buttons">
                     <a class="button is-primary">
                         <strong>Sign up</strong>
                     </a>
-                    <a class="button is-light">
+                    <RouterLink to="/login" class="button is-light">
                         Log in
-                    </a>
+                    </RouterLink>
                 </div>
             </b-navbar-item>
         </template>
