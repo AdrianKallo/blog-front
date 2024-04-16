@@ -19,7 +19,7 @@ export const useAuthStore = defineStore('auth', {
             });
             await this.getUser();
         },
-        async register(email, password) {
+        async register(name,email, password) {
             let response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
             response = await axios.post('http://localhost:8000/api/register', {
                 email: email,

@@ -17,6 +17,9 @@ async function register(){
 
 <template>
     <div class="container">
+        <b-field label="Name">
+            <b-input type="name" v-model="name"></b-input>
+        </b-field>
         <b-field label="Email">
             <b-input type="email" v-model="email"></b-input>
         </b-field>
