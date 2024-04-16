@@ -1,7 +1,10 @@
 <script setup>
 import { useAuthStore } from '../stores/auth.js';
+import { RouterLink } from 'vue-router';
+
 const auth = useAuthStore()
 </script>
+
 <template>
     <b-navbar>
         <template #brand>
@@ -29,7 +32,7 @@ const auth = useAuthStore()
             </b-navbar-dropdown>
             <b-navbar-item tag="div" v-else>
                 <div class="buttons">
-                    <a class="button is-primary">
+                    <a class="button is-primary" href="/register">
                         <strong>Sign up</strong>
                     </a>
                     <RouterLink to="/login" class="button is-light">
