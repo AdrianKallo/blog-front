@@ -1,26 +1,23 @@
 import { createApp } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import { createPinia } from 'pinia';
-
 import './style.css';
 import Buefy from '@ntohq/buefy-next';
 import '@ntohq/buefy-next/dist/buefy.css';
-
 import App from './App.vue';
 import Home from './pages/Home.vue';
 import ToDo from './pages/ToDo.vue';
 import Login from './pages/Login.vue';
-import Register from './pages/Register.vue'; // Fix: Added quotes around path
+import Register from './pages/Register.vue';
 
-// Define routes
+
 const routes = [
     { path: '/', component: Home },
     { path: '/todo', component: ToDo },
     { path: '/login', component: Login },
-    { path: '/register', component: Register }, // Add Register component route
+    { path: '/register', component: Register }, 
 ];
 
-// Create router instance
 const router = createRouter({
     history: createWebHistory(),
     routes,
